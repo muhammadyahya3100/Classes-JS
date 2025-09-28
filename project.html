@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8">
+  <title>Classes and Inheritance </title>
+</head>
+<body>
+  <h1>Classes and Inheritance wirh Example in (JavaScript)</h1>
+  <pre id="output"></pre>
+
+  <script>
+   
+    class Person {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      showInfo() {
+        return "نام: " + this.name + ", عمر: " + this.age;
+      }
+    }
+
+    
+    class Employee extends Person {
+      constructor(name, age, jobTitle) {
+        super(name, age);
+        this.jobTitle = jobTitle;
+      }
+      showEmployee() {
+        return "نام: " + this.name + ", عمر: " + this.age + ", عہدہ: " + this.jobTitle;
+      }
+    }
+
+   
+    var person1 = new Person("احمد", 30);
+    var employee1 = new Employee("فاطمہ", 25, "انجینئر");
+
+    document.getElementById("output").textContent =
+      person1.showInfo() + "\n" + employee1.showEmployee();
+  </script>
+</body>
+</html>
